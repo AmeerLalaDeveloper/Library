@@ -6,8 +6,8 @@ import { decreaseBookAmount } from '../api/books';
 import { toast, ToastContainer } from 'react-toastify';
 import { Redirect } from 'react-router';
 export default function Card({book,loggedUser,setloggedUser,selectedBook}) {
-    const notify=()=>toast('Added Successfully')
-    const [message,setMessage]=useState(null);
+    const notify=(msg='Added Successfully')=>toast(msg)
+   
     const [bookIsSelected,setBookIsSelected]=useState(false)
     function importAll(r) {
     return r.keys().map(r);
@@ -21,10 +21,7 @@ export default function Card({book,loggedUser,setloggedUser,selectedBook}) {
     const handleCart=async(e)=>{
 
         if(book.amount<3){
-        setMessage('No More In Stock')
-       setTimeout(()=>{
-           setMessage('')
-       },1500)   
+        notify('No More In Stock')
         return;
         }
         notify();
@@ -38,50 +35,25 @@ export default function Card({book,loggedUser,setloggedUser,selectedBook}) {
     return <Redirect to="/book"></Redirect>
     else
     return (
-        
-          <div className="my-2 rounded-t-3xl bg-gray-600 opacity-80 text-2xl m-3 min-h-80 text-white  md:w-5/12 sm:w-2/4 md:h-full  sm:h-full lg:w-3/12">
-              
-            <article className="overflow-hidden  rounded-t-xl shadow-lg">
-                <button className="block w-full "  onClick={e=>handleBook(e)}>
-                    <img alt="Placeholder" className="block h-80 w-full" src={images[rand].default}/>
-                   
+        <div class="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+
+            <div class="mb-8">
+                <button onClick={e=>handleBook(e)}>
+                <img class="object-center object-cover rounded-full h-44 w-44" src={images[rand].default} alt=""/>
                 </button>
-
-                <header className="flex items-center justify-between leading-tight p-2 md:p-4">
-                    <h1 className="">
-                        <button className="no-underline hover:underline " onClick={e=>handleBook(e)}>
-                           {book?book.title:null}
-                        </button>
-                    </h1>
-                    <p className="">
-                        {book!=='undefined'?book.createdAt.slice(0,10):null}
-                    </p>
-                    
-                </header>
-            <p className=" text-center ">{book?book.price:null}$</p>
-              <p className=" text-center ">{book?book.category:null}</p>
-                <footer className="flex items-center justify-between leading-none p-2 md:p-4">
-                    <button className="flex items-center no-underline hover:underline " onClick={e=>handleBook(book)}>
-                        <img alt="Placeholder" className="block shadow-lg rounded-full" src={book?book.avatar:null}/>
-                        <p className="ml-2" onClick={e=>handleBook(e)}>
-                           {book?book.keyword:null}
-                        </p>
-                    </button>
-                    
-                </footer>
-        {loggedUser?   <button className="block m-auto w-full bg-blue-200 py-4 m-4  flex items-center justify-center no-underline text-blue-500 hover:text-red-dark" >
-                        <span className="" onClick={e=>handleCart(e)}>Add to cart</span>
-                         <ToastContainer autoClose={1500}/>
-
-                        <p>{message}</p>
-                    </button>:null}
-                     {loggedUser?   <button className="block m-auto w-full bg-blue-100 py-4  flex items-center justify-center no-underline text-blue-500 hover:text-red-dark" >
-                        <span className="" onClick={e=>handleBook(e)}>Read More</span>
-                        <p>{message}</p>
-                    </button>:null}
-            </article>
-         </div>
-
+            </div>
+            <div class="text-center">
+                <p class="text-xl cursor-pointer hover:underline text-white font-bold mb-2" onClick={e=>handleBook(e)}>{book.title}</p>
+                <p class="text-base text-gray-400 font-normal">{book.price}$</p>
+                <p class="text-base text-gray-400 font-normal">{book.category}</p>
+            </div>
+            <div className="w-full text-center ">
+                {loggedUser? <><span className="block  cursor-pointer w-full bg-gray-500 p-4 my-1 rounded hover:opacity-80" onClick={e=>handleCart(e)}>Add to cart</span> <span className="block w-full bg-gray-500 p-4 cursor-pointer my-1 rounded hover:opacity-80" onClick={e=>handleBook(e)}>Read More</span>
+                 <ToastContainer autoClose={1500}/></>:null}
+            </div>
+        </div>
+        
+       
        
     )
 }

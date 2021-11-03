@@ -29,7 +29,7 @@ export default function PurchasedItems() {
     }
     return (
         <div className="w-3/4 h-auto flex flex-col items-center justify-center">
-            <h1 className="my-2 text-4xl text-gray-500">Most Sold Books</h1>
+            <h1 className="my-2 text-4xl text-gray-200">Most Sold Books</h1>
             <select name="" id="" 
             onChange={e=>handleSelect(e)} className="mb-4">
                 <option disabled></option>
@@ -40,7 +40,7 @@ export default function PurchasedItems() {
         
             {
                labels.length>0&&data.length>0?
-            <Chart chartLabels={labels} rawi={data}></Chart>:'You Have No Books'
+            <Chart chartLabels={labels} rawi={data}></Chart>:<span className="text-gray-200">You Have No Books</span> 
             }
         </div>
     )

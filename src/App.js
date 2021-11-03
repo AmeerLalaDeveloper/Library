@@ -21,7 +21,6 @@ import Contact from './components/contact/Contact'
 import Clubmember from './components/clubMember/Clubmember'
 import PurchasedItems from './components/purchasedItems/PurchasedItems'
 import Users from './components/users/Users'
-import Club from './components/club/Club'
 import Managebooks from './components/managebooks/Managebooks'
 
 export default function App() {
@@ -39,8 +38,8 @@ export default function App() {
     },[user])
     return (
         <div className={user&&user.username==='adminstrator'?
-        "app flex w-fill bg-gray-200 min-h-screen relative s"
-        :"app flex bg-gray-200 flex-col justify-between w-screen min-h-screen relative "}>
+        "app flex w-fill bg-gray-800 min-h-screen relative s"
+        :"app flex bg-gray-800 flex-col justify-between w-screen min-h-screen relative "}>
             <BrowserRouter>        
                  <Usernav setfilteredBooks={setfilteredBooks} books={books} loggedUser={user} signOut={(value)=>setUser(value)}></Usernav>
                <Switch>

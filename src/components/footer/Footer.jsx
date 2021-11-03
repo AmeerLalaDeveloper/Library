@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function Footer({loggedUser}) {
     return (
    
-   <footer className=" text-gray-600 body-font">
+   <footer className=" text-gray-600 text-white bg-gray-700 body-font">
      {loggedUser&&loggedUser.username==="adminstrator"?null:
   <div
     className="
@@ -35,10 +35,10 @@ export default function Footer({loggedUser}) {
           text-gray-900
         "
       >
-        <i className="fas fa-cubes fa-lg text-purple-500"></i>
-        <span className="ml-3 text-xl">A-L Library</span>
+        <i className="fas fa-cubes fa-lg text-gray-500"></i>
+        <span className="ml-3 text-gray-200 text-xl">A-L Library</span>
       </Link>
-      <p className="mt-2 text-sm text-gray-500">
+      <p className="mt-2 text-sm text-white">
         Rated As #1 Depository In The World 
       </p>
     </div>
@@ -69,22 +69,22 @@ export default function Footer({loggedUser}) {
         <ul className="list-none block  w-96 px-4  flex justify-between mb-10">
 
           <li>
-            <Link to="/login" className="text-gray-600 hover:text-gray-800"
+            <Link to="/login" className="text-white hover:text-gray-800"
               >Login</Link
             >
           </li>
           <li>
-            <Link to="/" className="text-gray-600 hover:text-gray-800"
+            <Link to="/" className="text-white hover:text-gray-800"
               >About</Link
             >
           </li>
           <li>
-            <Link to="/contact" className="text-gray-600 hover:text-gray-800"
+            <Link to="/contact" className="text-white hover:text-gray-800"
               >Contact</Link>
             
           </li>
           <li>
-            <Link to="/bestseller" className="text-gray-600 hover:text-gray-800"
+            <Link to="/bestseller" className="text-white hover:text-gray-800"
               >BestSellers</Link
             >
           </li>
@@ -96,7 +96,7 @@ export default function Footer({loggedUser}) {
         <a
         rel="noreferrer"
           href="https://www.tailwind-elements.com/"
-          className="text-gray-600 ml-1"
+          className="text-white ml-1"
           target="_blank"
           >Ameer lala</a
         >

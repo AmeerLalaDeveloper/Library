@@ -74,29 +74,55 @@ export default function Wishlist({loggedUser,setloggedUser}) {
             <div className="w-full h-full flex  absolute top-50 left-50">{message}</div>
             :null
         }
-        {user&&user.wishlist.length>0?
-        <table className="w-full justify-start whitespace-nowrap px-4 py-4">  
+       
+        {/* // <table className="w-full justify-start whitespace-nowrap px-4 py-4">  
+        // <thead>
+        //     <tr>
+        //     <th>Book Title</th>
+        //     <th>Author</th>
+        //     <th>Price</th>
+        //     <th>Remove book</th>
+        //     </tr>
+        //     </thead>
+        //     <tbody>  
+        //     {user.wishlist.map((item,idx)=>{
+        //         return <Item key={idx} setloggedUser={setUser} user={loggedUser} book={item}></Item>
+        //     })}
+        // </tbody>    
+      
+      // </table>:null} */}
+       {user&&user.wishlist.length>0?
+        <section className="container mx-auto p-6 font-mono">
+  <div className="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+    <div className="w-full ">
+      <table className="w-full">
         <thead>
-            <tr>
-            <th>Book Title</th>
-            <th>Author</th>
-            <th>Price</th>
-            <th>Remove book</th>
-            </tr>
-            </thead>
-            <tbody>  
-            {user.wishlist.map((item,idx)=>{
+          <tr className="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+            <th className="px-4 py-3">Name</th>
+            <th className="px-4 py-3">Title</th>
+            <th className="px-4 py-3">Price</th>
+            <th className="px-4 py-3">Date</th>
+            <th className="px-4 py-3">Remove Book</th>
+          </tr>
+        </thead>
+        <tbody className="bg-white">
+     
+          {user.wishlist.map((item,idx)=>{
                 return <Item key={idx} setloggedUser={setUser} user={loggedUser} book={item}></Item>
             })}
-        </tbody>    
-        </table>:null}
-          {user&&user.wishlist.length>0?<div className="flex justify-between w- align-center py-2 mt-2 px-12">
-            <button className="text-center bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded" value="submit" onClick={e=>handleBuy(e)}>Buy</button>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+:''}
+          {user&&user.wishlist.length>0?<div className="flex justify-evenly w-full align-center py-2 mt-2 px-12">
+            <button className="text-center h-12 w-1/12 bg-blue-700 hover:bg-blue-500 text-white font-bold  rounded" value="submit" onClick={e=>handleBuy(e)}>Buy</button>
             <div className="w-4/12">
                 {/* <h4 className="text-center">Enter Code</h4> 
              <input type="text"className="shadow appearance-none border border-red-500 rounded  py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"/> */}
             </div>
-            <span className="inline-block">Total : {
+            <span className="inline-block text-gray-500">Total : {
             returnMemberStatus()
             }
             </span>

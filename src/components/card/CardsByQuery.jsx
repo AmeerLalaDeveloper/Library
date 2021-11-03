@@ -7,19 +7,26 @@ export default function CardsByQuery({books,loggedUser,setloggedUser,setBook}) {
 
     }
     return (
-      <div className="container  w-12/12 my-12 mx-auto px-4 m-2 md:px-12">
-    <div className="flex flex-wrap w-auto -mx-1 lg:mx-0">
-    {books.length>0?
+    
+           <div className="w-full min-h-screen bg-gray-800">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+        <div className="text-center pb-12">
+         
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+           
+           
+           {books.length>0?
     books.map((book)=>{
         return <Card key={book.ISBN} loggedUser={loggedUser} setloggedUser={setloggedUser} book={book} selectedBook={(val)=>
         handleBook(val)}></Card>
 
     })
-    :<span className="text-black text-4xl ">No Book For This Search</span>
-    }
-            </div>
-            </div>
-           
+    :<span className="text-white text-4xl ">No Book For This Search</span>}
+        
+        </div>
+    </section>
+</div>
             
     )
 }

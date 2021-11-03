@@ -109,27 +109,27 @@ export default function BestSeller({books,loggedUser,setLoggedUser,setBook}) {
 <aside className="flex flex-wrap">
 <form action="">
          <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+      <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="username">
         Keyword
       </label>
-      <input className="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-300 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="keyword.." onChange={e=>handleInput(e)}/>
+      <input className="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-300 text-gray-700 leading-tight focus:outline-none focus:text-gray-900 placeholder-gray-800 focus:shadow-outline" id="username" type="text" placeholder="keyword.." onChange={e=>handleInput(e)}/>
     </div>
        <div className="mb-4">
-           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+           <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="username">
         Price
       </label>
-       <select className="block appearance-none w-full bg-gray-300 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-700" id="grid-state" onChange={e=>handlePrice(e)}> 
-          <option value={null}></option>
+       <select placeholder="Enter price..."className="block appearance-none w-full bg-gray-300 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:text-gray-600  focus:border-gray-900" id="grid-state" onChange={e=>handlePrice(e)}> 
+          <option value={null}>price..</option>
           <option value="0-50">0-50</option>
           <option value="50-100">50-100</option>
           <option value="100">100+</option>
         </select>
     </div>
        <div className="mb-4">
-           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+           <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="username">
         Category
       </label>
-       <select className="block appearance-none w-full bg-gray-300 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" onChange={e=>handleCategory(e)}>
+       <select className="block appearance-none w-full bg-gray-300 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded placeholder-black leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"  onChange={e=>handleCategory(e)}>
         {   
             categories?
             categories.map((category,idx)=>{
@@ -139,10 +139,10 @@ export default function BestSeller({books,loggedUser,setLoggedUser,setBook}) {
         </select>
     </div>
        <div className="mb-4">
-           <button value="submit" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onClick={e=>handleSubmit(e)}>Submit</button>
+           <button value="submit" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 hover:bg-blue-200 hover:text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onClick={e=>handleSubmit(e)}>Submit</button>
        </div>
         <div className="mb-4">
-           <button value="reset" className="shadow bg-blue-200 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onClick={e=>handleReset(e)}>Reset</button>
+           <button value="reset" className="shadow bg-blue-200 appearance-none border rounded w-full py-2 px-3 text-gray-700 hover:bg-gray-800 hover:text-white leading-tight focus:outline-none focus:shadow-outline" onClick={e=>handleReset(e)}>Reset</button>
        </div>
 </form>
 </aside>

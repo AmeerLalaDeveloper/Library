@@ -15,7 +15,7 @@ export default function Users() {
         })
     },[])
     return (
-        users.length==0?<svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+        users.length===0?<svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
   </svg>:
       <div className="flex items-center justify-center min-h-screen w-full">
 	<div className="col-span-12 ">
