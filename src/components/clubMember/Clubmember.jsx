@@ -7,14 +7,11 @@ import { toast, ToastContainer } from 'react-toastify';
 export default function Clubmember({loggedUser,setLoggedUser}) {
     const notify=(msg='Your Card Member Now')=>toast(msg)
     const [user,setUser]=useState(loggedUser)
-    const [message,setMessage]=useState({
-        message1:'',
-        message2:''
-    })
+
     const handleGold=async()=>{
     
         if(user&&user.isGold){
-        setMessage({message1:'You Already Have One',message2:message.message2})
+ 
          notify('You Already Have One')
             return
         }
@@ -30,7 +27,7 @@ export default function Clubmember({loggedUser,setLoggedUser}) {
     const handleRegular=async()=>{
      
     if(user.isRegular){
-       setMessage({message1:message.message1,message2:'You Already Have One'})
+      
          notify('You Already Have One')
     }
     else {
