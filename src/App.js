@@ -22,6 +22,7 @@ import Clubmember from './components/clubMember/Clubmember'
 import PurchasedItems from './components/purchasedItems/PurchasedItems'
 import Users from './components/users/Users'
 import Managebooks from './components/managebooks/Managebooks'
+import Adminav from './components/adminNav/Adminav'
 
 export default function App() {
     const [books,setBooks]=useState([])
@@ -40,8 +41,9 @@ export default function App() {
         <div className={user&&user.username==='adminstrator'?
         "app flex w-fill bg-gray-800 min-h-screen relative s"
         :"app flex bg-gray-800 flex-col justify-between w-screen min-h-screen relative "}>
-            <BrowserRouter>        
+            <BrowserRouter>  {user&&user.username==='adminstrator'?<Adminav signOut={(value)=>setUser(value)}></Adminav>:      
                  <Usernav setfilteredBooks={setfilteredBooks} books={books} loggedUser={user} signOut={(value)=>setUser(value)}></Usernav>
+    }
                <Switch>
                     <Route path="/displaysearch" exact>
                     <DisplaySearch filterdBooks={filterdBooks} user={user} setUser={setUser} setSelectedBook={setSelectedBook}>

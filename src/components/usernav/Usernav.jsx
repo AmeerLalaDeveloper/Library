@@ -24,23 +24,13 @@ export default function Usernav({setfilteredBooks,books,loggedUser,signOut}) {
     },[loggedUser])
     return (
       
-   <nav className={user&&user.username==='adminstrator'?"flex items-center flex-col shadow-inner	py-4  bg-gray-700 px-2 ":"flex items-center justify-between flex-wrap bg-gray-700 	p-6"}>
-  <div className={user&&user.username==='adminstrator'?"flex items-center  px-4 align-items flex-shrink-0 text-white":"flex  px-4 flex-shrink-0 text-white mr-6"}>
+   <nav className="flex items-center justify-between flex-wrap bg-gray-700 	p-6">
+  <div className="flex  px-4 flex-shrink-0 text-white mr-6">
   <Link to="/" className="font-semibold text-xl tracking-tight">A-L Library</Link>
   </div>
 
-  <div className={user&&user.username==='adminstrator'?"flex align-items w-full  px-4 m-0   h-2/4 justify-between flex-col":"w-full block px-4  flex-grow lg:flex lg:items-center  lg:w-auto"}>
-    {user&&user.username==='adminstrator'?<div className="w-full flex text-center h-full justify-around flex-col md:w-3/4 sm:w-3/4 lg:flex lg:flex-col flex flex-col">
-      <Link to="/purchaseditems" className={user.username==='adminstrator'?"text-white block w-full  lg:text-2xl-red-200 hover:text-blue-300 ml-4":"text-white block w-full bg-green-300 lg:inline-block lg:mt-2 text-2xl-red-200 hover:text-blue-300 ml-4"}>
-        Purchased Items
-      </Link>
-       <Link to="/users" className={user.username==='adminstrator'?"text-white block w-full lg:inline-block lg:mt-0 text-2xl-red-200 hover:text-blue-300 ml-4":"text-white block mt-4 lg:inline-block lg:mt-0 text-2xl-red-200 hover:text-blue-300 ml-4"}>
-        Users
-      </Link>
-       <Link to="/manageBooks" className=" text-white block mt-4 lg:inline-block lg:mt-0 text-2xl-red-200 hover:text-blue-300 ml-4">
-        Books
-      </Link>
-    </div>:
+  <div className="w-full block px-4  flex-grow lg:flex lg:items-center  lg:w-auto">
+  
     <div className="text-sm lg:flex-grow">
       <div className="w-full md:w-3/4 sm:w-3/4 lg:flex lg:flex-row flex flex-col">
         <SearchInput onChangeInput={setInput}></SearchInput>
@@ -66,7 +56,7 @@ export default function Usernav({setfilteredBooks,books,loggedUser,signOut}) {
       
       }
     </div>
-}
+
     <div>
 
      {

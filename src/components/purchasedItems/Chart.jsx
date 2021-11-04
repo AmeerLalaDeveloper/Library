@@ -25,7 +25,7 @@ export default function Chart({chartLabels,rawi}) {
 
     return (
      
-        <div className="chart w-3/4 h-10/12">
+        <div className="chart w-2/4 h-10/12">
     <Bar
 	data={chartData}
      width={100}   

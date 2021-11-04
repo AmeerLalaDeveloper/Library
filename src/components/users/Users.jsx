@@ -17,7 +17,7 @@ export default function Users() {
     return (
         users.length===0?<svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
   </svg>:
-      <div className="flex items-center justify-center min-h-screen w-full">
+      <div className="flex w-auto  bg-gray-800 items-center lg:justify-center justify-end  w-full">
 	<div className="col-span-12 ">
 		<div className="overflow-auto lg:overflow-visible  m-auto w-full">
 			<table className="table text-gray-400 border-separate space-y-6 text-sm">
