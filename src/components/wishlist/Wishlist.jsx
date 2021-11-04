@@ -126,7 +126,7 @@ export default function Wishlist({loggedUser,setloggedUser}) {
             returnMemberStatus()
             }
             </span>
-        </div>:<span className="text-4xl text-black">No Items In Your WishList</span> }
+        </div>:<span className="text-4xl text-gray-200">No Items In Your WishList</span> }
         </div>
     )
 }

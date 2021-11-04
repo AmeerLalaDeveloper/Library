@@ -86,39 +86,39 @@ export default function Register() {
       <form className="w-auto  max-w-lg m-auto py-5 px-5">
   <div className="flex flex-wrap -mx-3 mb-6">
     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+      <label className="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" htmlFor="grid-first-name">
         First Name
       </label>
-      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="firstname" type="text" placeholder="fname" onChange={e=>handleInputChange(e)}/>
+      <input className="appearance-none block w-full bg-gray-300 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="firstname" type="text" placeholder="fname" onChange={e=>handleInputChange(e)}/>
       <p className="text-red-500 text-xs italic">{invalidMessage['first']}</p>
     </div>
     <div className="w-full md:w-1/2 px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+      <label className="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" htmlFor="grid-last-name">
         Last Name
       </label>
-      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="lastname" type="text" placeholder="lname" onChange={e=>handleInputChange(e)}/>
+      <input className="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="lastname" type="text" placeholder="lname" onChange={e=>handleInputChange(e)}/>
       <p className="text-red-500 text-xs italic">{invalidMessage['last']}</p>
     </div>
   </div>
   <div className="flex flex-wrap -mx-3 mb-6">
     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+      <label className="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" htmlFor="grid-first-name">
         Username 
       </label>
-      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="username" type="text" placeholder="username10" onChange={e=>handleInputChange(e)}/>
+      <input className="appearance-none block w-full bg-gray-300 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="username" type="text" placeholder="username10" onChange={e=>handleInputChange(e)}/>
       <p className="text-red-500 text-xs italic">{invalidMessage['username']}</p>
     </div>
     <div className="w-full md:w-1/2 px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+      <label className="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" htmlFor="grid-last-name">
         Password
       </label>
-      <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" type="password"  onChange={e=>handleInputChange(e)}/>
+      <input className="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" type="password"  onChange={e=>handleInputChange(e)}/>
       <p className="text-red-500 text-xs italic">{invalidMessage['password']}</p>
     </div>
   </div>
   
   <div className="flex flex-wrap -mx-3 mb-2">
-    <button type="submit" className="appearance-none block w-full bg-gray-200 text-gray-700 py-3 px-4" onClick={e=>handleSubmit(e)}>submit</button>
+    <button type="submit" className="appearance-none block w-full bg-gray-300 text-gray-700 py-3 px-4" onClick={e=>handleSubmit(e)}>submit</button>
      <p className="text-red-500 text-xs italic text-center w-full my-2">{invalidMessage['submit']}</p>
   </div>
 </form>

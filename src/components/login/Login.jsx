@@ -9,23 +9,28 @@ export default function Login({setloggedUser}) {
     const [username,setUsername]=useState('')
     const [password,setPassword]=useState('')
     const [message,setMessage]=useState('')
+    const [redirectToAdmin,setRedirectToAdmin]=useState(false)
     const [redirect,setRedirect]=useState(false)
     useEffect(()=>{
         getUsers().then(res=>setUsers(res.data))
     },[])
     const handleSubmit=(e)=>{
       e.preventDefault()
-      console.log(password,username);
+     
        let user= users.find(user=>user.password===password&&user.username===username)
        if(user){
+            if(username==='adminstartor')
+          setRedirectToAdmin(true)
+          else setRedirect(true)
        setloggedUser(user)
-      setRedirect(true)
+        
        }
        else 
        setMessage('Wrong username/password')
     }
-    if(redirect)
-    return <Redirect to="/home"></Redirect>
+    if(redirectToAdmin)
+    return <Redirect to="/users"></Redirect>
+    else if(redirect) return <Redirect to="/"></Redirect>
     else
     return (
 

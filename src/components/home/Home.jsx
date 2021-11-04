@@ -1,10 +1,8 @@
 import React from 'react'
-
 export default function Home({children}) {
     return (
-        <div className="w-full h-full bg-hero-pattern" >
-
-            <div className="container h-screen w-full m-auto bg-blue-200 flex flex-col justify-center m-4 p-4 md:py-4 sm:py-4">
+        <div className="w-full h-full bg-hero-pattern">
+            <div className="container text-white text-4xl z-10 h-screen w-full   m-auto flex flex-col justify-center m-4 p-4 md:py-4 sm:py-4" >
                 <h1 className="text-center text-4xl mb-4">Welcome To Ameers Library</h1>
                 <h3 className="text-center text-2xl mb-4">Where You Can Buy Books And Loan Books</h3>
               <p className="w-auto m-4 px-4">

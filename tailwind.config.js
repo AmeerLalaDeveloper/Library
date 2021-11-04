@@ -33,12 +33,11 @@ module.exports = {
     },
   }
 }
-
-module.exports = {
+ module.exports = {
     theme: {
       extend: {
         backgroundImage: {
-         'gold': "url('./src/components/img/gold.jpg')",
+         'hero-pattern': "url('../img/library.svg')",
          'footer-texture': "url('/img/footer-texture.png')",
         }
       }

@@ -39,8 +39,8 @@ export default function App() {
     },[user])
     return (
         <div className={user&&user.username==='adminstrator'?
-        "app flex w-fill bg-gray-800 min-h-screen relative s"
-        :"app flex bg-gray-800 flex-col justify-between w-screen min-h-screen relative "}>
+        "app flex w-fill bg-gray-800 min-h-screen relative overflow-x-hidden"
+        :"app flex bg-gray-800 flex-col justify-between w-full min-h-screen relative overflow-x-hidden"}>
             <BrowserRouter>  {user&&user.username==='adminstrator'?<Adminav signOut={(value)=>setUser(value)}></Adminav>:      
                  <Usernav setfilteredBooks={setfilteredBooks} books={books} loggedUser={user} signOut={(value)=>setUser(value)}></Usernav>
     }

@@ -35,17 +35,17 @@ export default function Card({book,loggedUser,setloggedUser,selectedBook}) {
     return <Redirect to="/book"></Redirect>
     else
     return (
-        <div class="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
+        <div className="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
 
-            <div class="mb-8">
+            <div className="mb-8">
                 <button onClick={e=>handleBook(e)}>
-                <img class="object-center object-cover rounded-full h-44 w-44" src={images[rand].default} alt=""/>
+                <img className="object-center object-cover rounded-full h-44 w-44" src={images[rand].default} alt=""/>
                 </button>
             </div>
-            <div class="text-center">
-                <p class="text-xl cursor-pointer hover:underline text-white font-bold mb-2" onClick={e=>handleBook(e)}>{book.title}</p>
-                <p class="text-base text-gray-400 font-normal">{book.price}$</p>
-                <p class="text-base text-gray-400 font-normal">{book.category}</p>
+            <div className="text-center">
+                <p className="text-xl cursor-pointer hover:underline text-white font-bold mb-2" onClick={e=>handleBook(e)}>{book.title}</p>
+                <p className="text-base text-gray-400 font-normal">{book.price}$</p>
+                <p className="text-base text-gray-400 font-normal">{book.category}</p>
             </div>
             <div className="w-full text-center ">
                 {loggedUser? <><span className="block  cursor-pointer w-full bg-gray-500 p-4 my-1 rounded hover:opacity-80" onClick={e=>handleCart(e)}>Add to cart</span> <span className="block w-full bg-gray-500 p-4 cursor-pointer my-1 rounded hover:opacity-80" onClick={e=>handleBook(e)}>Read More</span>

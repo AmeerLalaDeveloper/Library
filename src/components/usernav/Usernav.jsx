@@ -26,7 +26,7 @@ export default function Usernav({setfilteredBooks,books,loggedUser,signOut}) {
       
    <nav className="flex items-center justify-between flex-wrap bg-gray-700 	p-6">
   <div className="flex  px-4 flex-shrink-0 text-white mr-6">
-  <Link to="/" className="font-semibold text-xl tracking-tight">A-L Library</Link>
+  <Link to="/" className="font-semibold text-xl tracking-tight"><i className="fa fa-book"></i> A-L Library</Link>
   </div>
 
   <div className="w-full block px-4  flex-grow lg:flex lg:items-center  lg:w-auto">
